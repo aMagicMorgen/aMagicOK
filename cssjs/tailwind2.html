@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Магический Tailwind Лендинг</title>
+  
+  <!-- Подключаем Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Скрипт для автоматического применения стилей -->
+  <script>
+    tailwind.config = {
+      mode: 'jit',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#10B981'
+          }
+        }
+      }
+    }
+
+    // Функция для применения стилей к элементам
+    function applyTailwindStyles() {
+      // Общие стили для тегов
+      const tagStyles = {
+        'body': 'font-sans bg-gray-50 text-gray-800',
+        'h1': 'text-4xl font-bold mb-6 text-center',
+        'h2': 'text-3xl font-bold mb-8 text-center',
+        'h3': 'text-2xl font-bold mb-4',
+        'p': 'text-lg mb-4',
+        'a': 'text-primary hover:underline',
+        'button': 'bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition',
+        'section': 'py-16 px-4',
+        'header': 'bg-white shadow-sm py-4 sticky top-0',
+        'footer': 'bg-gray-800 text-white py-12',
+        'input': 'border rounded px-4 py-2 w-full mb-4',
+        'textarea': 'border rounded px-4 py-2 w-full mb-4'
+      }
+
+      // Применяем стили к тегам
+      Object.entries(tagStyles).forEach(([tag, styles]) => {
+        document.querySelectorAll(tag).forEach(el => {
+          el.classList.add(...styles.split(' '))
+        })
+      })
+
+      // Специальные стили для конкретных элементов
+      document.querySelectorAll('header nav a').forEach(a => {
+        a.classList.add('px-4', 'py-2', 'hover:text-primary')
+      })
+
+      document.querySelectorAll('section:nth-of-type(even)').forEach(section => {
+        section.classList.add('bg-white')
+      })
+
+      document.querySelectorAll('button.cta').forEach(btn => {
+        btn.classList.add('bg-secondary', 'hover:bg-secondary/90', 'px-8', 'py-4', 'text-xl')
+      })
+    }
+
+    // Применяем стили после загрузки страницы
+    document.addEventListener('DOMContentLoaded', applyTailwindStyles)
+  </script>
+</head>
+<body>
+  <header>
+    <div>
+      <nav>
+        <a href="#">Главная</a>
+        <a href="#features">Возможности</a>
+        <a href="#pricing">Цены</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>Магический Tailwind Лендинг</h1>
+      <p>Чистый HTML без классов - стилизация через JavaScript</p>
+      <div>
+        <button class="cta">Попробовать</button>
+        <button>Узнать больше</button>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Наши возможности</h2>
+      
+      <div>
+        <div>
+          <h3>Автоматическая стилизация</h3>
+          <p>Просто пишите HTML, а стили применятся автоматически</p>
+        </div>
+        <div>
+          <h3>Адаптивный дизайн</h3>
+          <p>Идеальное отображение на всех устройствах</p>
+        </div>
+        <div>
+          <h3>Быстрая разработка</h3>
+          <p>Создавайте страницы в разы быстрее</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Как это работает?</h2>
+      <div>
+        <div>
+          <p>Мы используем JavaScript, который анализирует структуру вашего HTML и автоматически применяет классы Tailwind.</p>
+          <p>Вам не нужно писать CSS или добавлять классы в разметку!</p>
+        </div>
+        <div>
+          <pre><code>&lt;!-- Ваш чистый HTML --&gt;
+&lt;button&gt;Кнопка&lt;/button&gt;
+
+&lt;!-- Становится --&gt;
+&lt;button class="bg-blue-500 text-white px-4 py-2 rounded"&gt;Кнопка&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>Наши тарифы</h2>
+      
+      <div>
+        <div>
+          <h3>Базовый</h3>
+          <p>Бесплатно</p>
+          <button>Выбрать</button>
+        </div>
+        <div>
+          <h3>Профессиональный</h3>
+          <p>$29/месяц</p>
+          <button>Выбрать</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Свяжитесь с нами</h2>
+      <form>
+        <input type="text" placeholder="Ваше имя">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Сообщение"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p>© 2023 Магический Tailwind. Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>
