@@ -99,3 +99,197 @@
 ```
 
 Для кастомизации можно переопределять CSS-переменные (например, `--color-link` для изменения цвета ссылок).
+
+Вот несколько **красивых примеров с MVP.css**, которые демонстрируют его возможности без использования классов — только стандартные HTML-теги:
+
+---
+
+### 1. **Главная страница (лендинг)**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Мой сайт</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+<body>
+  <header>
+    <h1>Привет, мир!</h1>
+    <p>Простой и элегантный дизайн с MVP.css</p>
+    <nav>
+      <ul>
+        <li><a href="#"><b>Главная</b></a></li>
+        <li><a href="#"><i>О нас</i></a></li>
+        <li><a href="#"><b>Контакты</b></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <aside>
+        <h2>Карточка</h2>
+        <p>Это пример карточки с тенью при наведении.</p>
+        <a href="#"><b>Кнопка</b></a>
+      </aside>
+
+      <article>
+        <h2>Статья</h2>
+        <p>Текст статьи с <mark>выделением</mark> и <a href="#">ссылкой</a>.</p>
+        <blockquote>
+          "Цитата выглядит стильно."
+          <footer>— Автор</footer>
+        </blockquote>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <small>© 2024 Мой сайт</small>
+  </footer>
+</body>
+</html>
+```
+
+---
+
+### 2. **Блог-пост**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Мой блог</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+<body>
+  <header>
+    <h1>Мой блог</h1>
+    <nav>
+      <ul>
+        <li><a href="#"><b>Все статьи</b></a></li>
+        <li><a href="#"><i>Подписаться</i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>Заголовок статьи</h2>
+      <p>Публикация: <small>20 апреля 2024</small></p>
+      <p>Первый абзац с текстом. MVP.css автоматически стилизует <code>код</code> и <a href="#">ссылки</a>.</p>
+      
+      <pre><code>// Пример кода
+function hello() {
+  console.log("Привет, MVP.css!");
+}</code></pre>
+
+      <figure>
+        <img src="https://placehold.co/600x400" alt="Пример изображения">
+        <figcaption><small>Подпись к изображению</small></figcaption>
+      </figure>
+
+      <h3>Подзаголовок</h3>
+      <ul>
+        <li>Пункт списка 1</li>
+        <li>Пункт списка 2</li>
+      </ul>
+    </article>
+  </main>
+</body>
+</html>
+```
+
+---
+
+### 3. **Форма и таблица**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Контакты</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+<body>
+  <main>
+    <h1>Связаться с нами</h1>
+    
+    <form>
+      <label for="name">Имя:</label>
+      <input type="text" id="name" placeholder="Ваше имя">
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="email@example.com">
+      
+      <label for="message">Сообщение:</label>
+      <textarea id="message" rows="5"></textarea>
+      
+      <input type="submit" value="Отправить">
+    </form>
+
+    <hr>
+
+    <h2>Наша команда</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Имя</th>
+          <th>Должность</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Алексей</td>
+          <td>Разработчик</td>
+        </tr>
+        <tr>
+          <td>Мария</td>
+          <td>Дизайнер</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
+```
+
+---
+
+### 4. **Раскрывающийся блок и модальное окно**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Демо</title>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+<body>
+  <main>
+    <details>
+      <summary>Нажмите, чтобы раскрыть</summary>
+      <p>Скрытый контент с анимацией. Работает даже без JavaScript!</p>
+    </details>
+
+    <button onclick="document.querySelector('dialog').showModal()">
+      Открыть окно
+    </button>
+
+    <dialog>
+      <h2>Модальное окно</h2>
+      <p>Это всплывающее окно с затемнением фона.</p>
+      <button onclick="this.closest('dialog').close()">Закрыть</button>
+    </dialog>
+  </main>
+</body>
+</html>
+```
+
+---
+
+### Что делает эти примеры красивыми:
+1. **Чистая типографика** — заголовки, списки и цитаты выглядят аккуратно.
+2. **Карточки** — элемент `<aside>` с тенями при наведении.
+3. **Готовые компоненты** — таблицы, формы и кнопки стилизованы "из коробки".
+4. **Адаптивность** — корректно отображается на мобильных устройствах.
+5. **Тёмная тема** — автоматически включается при системных настройках.
+
+Для быстрого старта скопируйте любой пример и подключите MVP.css через CDN, как показано в `<head>`. Никакие классы не нужны!
