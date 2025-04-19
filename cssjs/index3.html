@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магические CSS-фреймворки</title>
+  <!-- Базовый reset -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; line-height: 1.6; }
+    
+    /* Стили для выпадающего меню (работают без фреймворков) */
+    .style-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #f9f9f9;
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .show {
+      display: block;
+    }
+    
+    /* Базовые стили лендинга (если не выбран никакой фреймворк) */
+    header { padding: 1rem; text-align: center; background: #f0f0f0; }
+    main { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+    section { margin: 2rem 0; padding: 1rem; }
+    .hero { text-align: center; padding: 3rem 1rem; background: #e9e9e9; }
+    .features { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .features article { flex: 1; min-width: 250px; padding: 1rem; border: 1px solid #ddd; }
+    footer { text-align: center; padding: 1rem; background: #333; color: white; }
+  </style>
+  
+  <!-- Все CSS-фреймворки (изначально отключены) -->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css" id="mvp-css" disabled>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico" id="pico-css" disabled>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" id="simple-css" disabled>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" id="water-css" disabled>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tacit-css@1.5.5/dist/tacit.min.css" id="tacit-css" disabled>
+  <link rel="stylesheet" href="https://holidaycss.js.org/holiday.css" id="holiday-css" disabled>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/new.css@1.1.3/dist/new.min.css" id="new-css" disabled>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bamboo.css@1.3.7/dist/bamboo.min.css" id="bamboo-css" disabled>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css" id="sakura-css" disabled>
+  <link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css" id="marx-css" disabled>
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" disabled>
+  
+  <!-- Tailwind (подключим динамически через JS) -->
+</head>
+<body>
+  <!-- Панель переключения стилей -->
+  <div class="style-switcher">
+    <div class="dropdown">
+      <button class="dropbtn">Выберите стиль ▼</button>
+      <div class="dropdown-content">
+        <strong>Classless:</strong>
+        <a href="#" data-style="none">Без стиля</a>
+        <a href="#" data-style="mvp">MVP.css</a>
+        <a href="#" data-style="pico">Pico.css</a>
+        <a href="#" data-style="simple">Simple.css</a>
+        <a href="#" data-style="water">Water.css</a>
+        <a href="#" data-style="tacit">Tacit</a>
+        <a href="#" data-style="holiday">Holiday.css</a>
+        <a href="#" data-style="new">New.css</a>
+        <a href="#" data-style="bamboo">Bamboo</a>
+        <a href="#" data-style="sakura">Sakura</a>
+        <a href="#" data-style="marx">Marx</a>
+        
+        <strong>Магические:</strong>
+        <a href="#" data-style="bootstrap">Bootstrap</a>
+        <a href="#" data-style="tailwind">Tailwind</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Основной контент -->
+  <header>
+    <h1>Демо магических CSS-фреймворков</h1>
+    <p>Один HTML — множество стилей!</p>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Создаём красивые лендинги</h2>
+      <p>Без написания CSS — только чистый HTML + магия JS</p>
+      <button>Попробовать</button>
+    </section>
+
+    <section class="features">
+      <article>
+        <h3>Автоматические стили</h3>
+        <p>Фреймворки сами добавят оформление элементам</p>
+      </article>
+      <article>
+        <h3>Адаптивность</h3>
+        <p>Корректное отображение на всех устройствах</p>
+      </article>
+      <article>
+        <h3>Быстрый старт</h3>
+        <p>Просто пишите HTML — остальное сделает JS</p>
+      </article>
+    </section>
+
+    <section class="cta">
+      <h2>Попробуйте прямо сейчас!</h2>
+      <form>
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" placeholder="example@mail.com">
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+    
+    <section>
+      <h2>Пример таблицы</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Фреймворк</th>
+            <th>Тип</th>
+            <th>Размер</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bootstrap</td>
+            <td>Классовый</td>
+            <td>24 КБ</td>
+          </tr>
+          <tr>
+            <td>Tailwind</td>
+            <td>Утилитарный</td>
+            <td>3 КБ (JIT)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023 Магические CSS-фреймворки</p>
+    <small>Выберите стиль из меню в правом верхнем углу</small>
+  </footer>
+
+  <!-- Скрипт переключения стилей -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Выпадающее меню
+      document.querySelector('.dropbtn').addEventListener('click', function() {
+        document.querySelector('.dropdown-content').classList.toggle('show');
+      });
+      
+      // Закрытие меню при клике вне его
+      window.addEventListener('click', function(e) {
+        if (!e.target.matches('.dropbtn')) {
+          const dropdowns = document.querySelectorAll('.dropdown-content');
+          dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('show');
+          });
+        }
+      });
+      
+      // Переключение стилей
+      document.querySelectorAll('[data-style]').forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          const style = this.getAttribute('data-style');
+          applyStyle(style);
+          document.querySelector('.dropbtn').textContent = `${this.textContent} ▼`;
+          document.querySelector('.dropdown-content').classList.remove('show');
+        });
+      });
+      
+      // Функция применения стиля
+      function applyStyle(style) {
+        // Отключаем все CSS
+        document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+          link.disabled = true;
+        });
+        
+        // Включаем выбранный
+        switch(style) {
+          case 'none':
+            break;
+            
+          case 'bootstrap':
+            document.getElementById('bootstrap-css').disabled = false;
+            break;
+            
+          case 'tailwind':
+            // Динамически загружаем Tailwind
+            const tailwindScript = document.createElement('script');
+            tailwindScript.src = 'https://cdn.tailwindcss.com';
+            tailwindScript.onload = function() {
+              tailwind.config = {
+                corePlugins: { preflight: true }
+              };
+            };
+            document.head.appendChild(tailwindScript);
+            break;
+            
+          default:
+            const cssLink = document.getElementById(`${style}-css`);
+            if (cssLink) cssLink.disabled = false;
+        }
+      }
+      
+      // По умолчанию включаем Pico.css
+      applyStyle('pico');
+    });
+  </script>
+</body>
+</html>
