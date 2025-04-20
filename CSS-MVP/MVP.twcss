@@ -1,0 +1,42 @@
+html
+    scroll-smooth
+body
+    bg-white text-black dark:bg-gray-800 dark:text-gray-100 line-height: 1.5
+h1 h2 h3 h4 h5 h6
+    font-bold text-wrap: balance
+h1
+    text-4xl my-6 text-center
+h2
+    text-3xl my-8 text-center
+p
+    my-4
+a
+    text-primary underline hover:brightness-125
+code
+    bg-accent dark:bg-accent-dark px-2 rounded
+button input[type="submit"]
+    bg-primary text-white px-8 py-3 rounded transition-colors hover:brightness-125 active:brightness-90
+section
+    flex flex-wrap justify-center
+footer header main
+    max-w-content mx-auto py-12 px-4
+input textarea select
+    border border-gray-200 dark:border-gray-600 rounded px-4 py-2 w-full mb-4 bg-transparent
+table
+    border border-gray-200 dark:border-gray-600 rounded-lg inline-block max-w-full overflow-auto
+th
+    bg-primary text-white
+td th
+    px-4 py-2
+.dark
+    --color-accent: #0097fc4f --color-secondary: #e20de9
+.scrollbar-thin
+    scrollbar-width: thin scrollbar-color: theme('colors.gray.400') transparent
+.scrollbar-thin::-webkit-scrollbar
+    w-1.5 h-1.5
+.scrollbar-thin::-webkit-scrollbar-thumb
+    bg-gray-400 rounded-full
+.card
+    border border-gray-200 dark:border-gray-600 rounded-lg shadow-md p-5 m-4 hover:shadow-lg transition-shadow max-w-card
+.dropdown
+    absolute left-0 top-full bg-white dark:bg-gray-700 border rounded shadow-lg py-2 min-w-[200px] z-10
