@@ -2,7 +2,7 @@
 
 class TailwindStylerScript
 {
-    private array $stylesMap = [];
+    private $stylesMap = [];
 
     public function __construct(string $styleString)
     {
