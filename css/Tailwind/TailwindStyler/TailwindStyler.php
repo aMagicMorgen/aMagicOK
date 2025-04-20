@@ -5,7 +5,7 @@ class TailwindStyler
     /**
      * @var array<string, string> Массив тег → классы Tailwind
      */
-    private array $stylesMap = [];
+    private $stylesMap = [];
 
     /**
      * Конструктор принимает строку с правилами и парсит её в массив
