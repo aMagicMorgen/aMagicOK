@@ -2,9 +2,9 @@
 
 class TailwindScriptGenerator
 {
-    private array $stylesMap = [];
-    private array $replaceSelectors = [];
-    private array $idSelectors = [];
+    private $stylesMap = [];
+    private $replaceSelectors = [];
+    private $idSelectors = [];
 
     /**
      * Конструктор принимает строку с правилами и парсит её
