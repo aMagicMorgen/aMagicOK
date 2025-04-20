@@ -19,7 +19,7 @@
 ```php
 <?php
 
-class TailwindScriptGenerator
+class TailwindStylerScript
 {
     private array $stylesMap = [];
 
@@ -80,7 +80,7 @@ class TailwindScriptGenerator
 
 ```php
 <?php
-require_once 'TailwindScriptGenerator.php';
+require_once 'TailwindStylerScript.php';
 
 $styleString = <<<EOT
 h1
@@ -111,7 +111,7 @@ button.cta
   bg-white rounded-xl shadow-md overflow-hidden p-6
 EOT;
 
-$scriptGen = new TailwindScriptGenerator($styleString);
+$scriptGen = new TailwindStylerScript($styleString);
 $styleScript = $scriptGen->generateScript();
 
 $html = <<<HTML
