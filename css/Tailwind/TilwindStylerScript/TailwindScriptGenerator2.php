@@ -2,8 +2,8 @@
 
 class TailwindScriptGenerator
 {
-    private array $stylesMap = [];
-    private array $replaceSelectors = [];
+    private $stylesMap = [];
+    private $replaceSelectors = [];
 
     /**
      * @param string $styleString
